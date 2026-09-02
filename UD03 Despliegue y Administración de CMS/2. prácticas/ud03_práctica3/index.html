@@ -1,7 +1,4 @@
-
-<!doctype html>
-<html lang="es" class="no-js">
-  <head>
+<!DOCTYPE html><html lang="es" class="no-js"><head>
     
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -13,21 +10,25 @@
       
       
       
+        <link rel="prev" href="../ud03_pr%C3%A1ctica2/">
       
       
-      <link rel="icon" href="/assets/images/favicon.png">
+        <link rel="next" href="../../../UD04%20WordPress%20Profesional/1.%20teor%C3%ADa/ut4-sesi%C3%B3n1/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.39">
     
     
       
-        <title>Aplicaciones Web — 2º SMX</title>
+        <title>3.3: Personalización Visual, Temas y Ecosistema de Plugins en WordPress - Aplicaciones Web — 2º SMX</title>
       
     
     
-      <link rel="stylesheet" href="/assets/stylesheets/main.8c3ca2c6.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.8c3ca2c6.min.css">
       
         
-        <link rel="stylesheet" href="/assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -40,20 +41,30 @@
       
         
         
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
         <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
     
-    <script>__md_scope=new URL("/",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
     
     
     
-  </head>
+  <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
   
   
     
@@ -71,6 +82,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#33-personalizacion-visual-temas-y-ecosistema-de-plugins-en-wordpress" class="md-skip">
+          Saltar a contenido
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -81,15 +97,15 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Cabecera">
-    <a href="/." title="Aplicaciones Web — 2º SMX" class="md-header__button md-logo" aria-label="Aplicaciones Web — 2º SMX" data-md-component="logo">
+    <a href="../../.." title="Aplicaciones Web — 2º SMX" class="md-header__button md-logo" aria-label="Aplicaciones Web — 2º SMX" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
       
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
     </label>
     <div class="md-header__title" data-md-component="header-title">
       <div class="md-header__ellipsis">
@@ -101,7 +117,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              3.3: Personalización Visual, Temas y Ecosistema de Plugins en WordPress
             
           </span>
         </div>
@@ -114,20 +130,20 @@
     
     
     
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="deep-purple"  aria-label="Cambiar a modo oscuro"  type="radio" name="__palette" id="__palette_0">
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="deep-purple" aria-label="Cambiar a modo oscuro" type="radio" name="__palette" id="__palette_0">
     
-      <label class="md-header__button md-icon" title="Cambiar a modo oscuro" for="__palette_1" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      <label class="md-header__button md-icon" title="Cambiar a modo oscuro" for="__palette_1" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
       </label>
     
   
     
     
     
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="deep-purple"  aria-label="Cambiar a modo claro"  type="radio" name="__palette" id="__palette_1">
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="deep-purple" aria-label="Cambiar a modo claro" type="radio" name="__palette" id="__palette_1">
     
-      <label class="md-header__button md-icon" title="Cambiar a modo claro" for="__palette_0" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      <label class="md-header__button md-icon" title="Cambiar a modo claro" for="__palette_0" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
       </label>
     
   
@@ -141,30 +157,30 @@
     
       <label class="md-header__button md-icon" for="__search">
         
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
       </label>
       <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required="">
       <label class="md-search__icon md-icon" for="__search">
         
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
         
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
       </label>
       <nav class="md-search__options" aria-label="Buscar">
         
         <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
           
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
         </button>
       </nav>
       
     </form>
     <div class="md-search__output">
-      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix="">
         <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
             Inicializando búsqueda
@@ -196,7 +212,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="/." class="md-tabs__link">
+      <a href="../../.." class="md-tabs__link">
         
   
     
@@ -221,7 +237,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/UD01%20Arquitectura%20web/1.%20teor%C3%ADa/ud01_sesi%C3%B3n1/" class="md-tabs__link">
+        <a href="../../../UD01%20Arquitectura%20web/1.%20teor%C3%ADa/ud01_sesi%C3%B3n1/" class="md-tabs__link">
           
   
   UD01 Arquitectura web
@@ -248,7 +264,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/UD02%20Bases%20de%20datos%20para%20aplicaciones%20web/1.%20teor%C3%ADa/ut2-sesi%C3%B3n1/" class="md-tabs__link">
+        <a href="../../../UD02%20Bases%20de%20datos%20para%20aplicaciones%20web/1.%20teor%C3%ADa/ut2-sesi%C3%B3n1/" class="md-tabs__link">
           
   
   UD02 Bases de datos para aplicaciones web
@@ -265,17 +281,21 @@
         
   
   
+    
+  
   
     
     
       
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="/UD03%20Despliegue%20y%20Administraci%C3%B3n%20de%20CMS/1.%20teor%C3%ADa/ut3-sesi%C3%B3n1/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../1.%20teor%C3%ADa/ut3-sesi%C3%B3n1/" class="md-tabs__link">
           
   
   UD03 Despliegue y Administración de CMS
@@ -302,7 +322,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/UD04%20WordPress%20Profesional/1.%20teor%C3%ADa/ut4-sesi%C3%B3n1/" class="md-tabs__link">
+        <a href="../../../UD04%20WordPress%20Profesional/1.%20teor%C3%ADa/ut4-sesi%C3%B3n1/" class="md-tabs__link">
           
   
   UD04 WordPress Profesional
@@ -329,7 +349,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/UD05%20Mantenimiento%20y%20Backups/1.%20teor%C3%ADa/ut5-sesi%C3%B3n1/" class="md-tabs__link">
+        <a href="../../../UD05%20Mantenimiento%20y%20Backups/1.%20teor%C3%ADa/ut5-sesi%C3%B3n1/" class="md-tabs__link">
           
   
   UD05 Mantenimiento y Backups
@@ -354,7 +374,7 @@
           
             
               
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -365,16 +385,16 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegación" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/." title="Aplicaciones Web — 2º SMX" class="md-nav__button md-logo" aria-label="Aplicaciones Web — 2º SMX" data-md-component="logo">
+    <a href="../../.." title="Aplicaciones Web — 2º SMX" class="md-nav__button md-logo" aria-label="Aplicaciones Web — 2º SMX" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
 
     </a>
     Aplicaciones Web — 2º SMX
   </label>
   
-  <ul class="md-nav__list" data-md-scrollfix>
+  <ul class="md-nav__list" data-md-scrollfix="">
     
       
       
@@ -383,7 +403,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -415,7 +435,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2">
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
@@ -434,7 +454,7 @@
             <span class="md-nav__icon md-icon"></span>
             UD01 Arquitectura web
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
+          <ul class="md-nav__list" data-md-scrollfix="">
             
               
                 
@@ -455,7 +475,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1">
         
           
           <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
@@ -474,7 +494,7 @@
             <span class="md-nav__icon md-icon"></span>
             1. teoría
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
+          <ul class="md-nav__list" data-md-scrollfix="">
             
               
                 
@@ -483,7 +503,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/UD01%20Arquitectura%20web/1.%20teor%C3%ADa/ud01_sesi%C3%B3n1/" class="md-nav__link">
+      <a href="../../../UD01%20Arquitectura%20web/1.%20teor%C3%ADa/ud01_sesi%C3%B3n1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -504,7 +524,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/UD01%20Arquitectura%20web/1.%20teor%C3%ADa/ud01_sesi%C3%B3n2/" class="md-nav__link">
+      <a href="../../../UD01%20Arquitectura%20web/1.%20teor%C3%ADa/ud01_sesi%C3%B3n2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -525,7 +545,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/UD01%20Arquitectura%20web/1.%20teor%C3%ADa/ud01_sesi%C3%B3n3/" class="md-nav__link">
+      <a href="../../../UD01%20Arquitectura%20web/1.%20teor%C3%ADa/ud01_sesi%C3%B3n3/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -546,7 +566,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/UD01%20Arquitectura%20web/1.%20teor%C3%ADa/ud01_sesi%C3%B3n4/" class="md-nav__link">
+      <a href="../../../UD01%20Arquitectura%20web/1.%20teor%C3%ADa/ud01_sesi%C3%B3n4/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -587,7 +607,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2">
         
           
           <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
@@ -606,7 +626,7 @@
             <span class="md-nav__icon md-icon"></span>
             2. prácticas
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
+          <ul class="md-nav__list" data-md-scrollfix="">
             
               
                 
@@ -615,7 +635,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/UD01%20Arquitectura%20web/2.%20pr%C3%A1cticas/ud01_pr%C3%A1ctica1/" class="md-nav__link">
+      <a href="../../../UD01%20Arquitectura%20web/2.%20pr%C3%A1cticas/ud01_pr%C3%A1ctica1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -636,7 +656,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/UD01%20Arquitectura%20web/2.%20pr%C3%A1cticas/ud01_pr%C3%A1ctica2/" class="md-nav__link">
+      <a href="../../../UD01%20Arquitectura%20web/2.%20pr%C3%A1cticas/ud01_pr%C3%A1ctica2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -657,7 +677,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/UD01%20Arquitectura%20web/2.%20pr%C3%A1cticas/ud01_pr%C3%A1ctica3/" class="md-nav__link">
+      <a href="../../../UD01%20Arquitectura%20web/2.%20pr%C3%A1cticas/ud01_pr%C3%A1ctica3/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -678,7 +698,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/UD01%20Arquitectura%20web/2.%20pr%C3%A1cticas/ud01_pr%C3%A1ctica4/" class="md-nav__link">
+      <a href="../../../UD01%20Arquitectura%20web/2.%20pr%C3%A1cticas/ud01_pr%C3%A1ctica4/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -726,7 +746,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3">
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -745,7 +765,7 @@
             <span class="md-nav__icon md-icon"></span>
             UD02 Bases de datos para aplicaciones web
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
+          <ul class="md-nav__list" data-md-scrollfix="">
             
               
                 
@@ -766,7 +786,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1">
         
           
           <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
@@ -785,7 +805,7 @@
             <span class="md-nav__icon md-icon"></span>
             1. teoría
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
+          <ul class="md-nav__list" data-md-scrollfix="">
             
               
                 
@@ -794,7 +814,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/UD02%20Bases%20de%20datos%20para%20aplicaciones%20web/1.%20teor%C3%ADa/ut2-sesi%C3%B3n1/" class="md-nav__link">
+      <a href="../../../UD02%20Bases%20de%20datos%20para%20aplicaciones%20web/1.%20teor%C3%ADa/ut2-sesi%C3%B3n1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -815,7 +835,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/UD02%20Bases%20de%20datos%20para%20aplicaciones%20web/1.%20teor%C3%ADa/ut2-sesi%C3%B3n2/" class="md-nav__link">
+      <a href="../../../UD02%20Bases%20de%20datos%20para%20aplicaciones%20web/1.%20teor%C3%ADa/ut2-sesi%C3%B3n2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -836,7 +856,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/UD02%20Bases%20de%20datos%20para%20aplicaciones%20web/1.%20teor%C3%ADa/ut2-sesi%C3%B3n3/" class="md-nav__link">
+      <a href="../../../UD02%20Bases%20de%20datos%20para%20aplicaciones%20web/1.%20teor%C3%ADa/ut2-sesi%C3%B3n3/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -857,7 +877,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/UD02%20Bases%20de%20datos%20para%20aplicaciones%20web/1.%20teor%C3%ADa/ut2-sesi%C3%B3n4/" class="md-nav__link">
+      <a href="../../../UD02%20Bases%20de%20datos%20para%20aplicaciones%20web/1.%20teor%C3%ADa/ut2-sesi%C3%B3n4/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -878,7 +898,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/UD02%20Bases%20de%20datos%20para%20aplicaciones%20web/1.%20teor%C3%ADa/ut2-sesi%C3%B3n5/" class="md-nav__link">
+      <a href="../../../UD02%20Bases%20de%20datos%20para%20aplicaciones%20web/1.%20teor%C3%ADa/ut2-sesi%C3%B3n5/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -899,7 +919,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/UD02%20Bases%20de%20datos%20para%20aplicaciones%20web/1.%20teor%C3%ADa/ut2-sesi%C3%B3n6/" class="md-nav__link">
+      <a href="../../../UD02%20Bases%20de%20datos%20para%20aplicaciones%20web/1.%20teor%C3%ADa/ut2-sesi%C3%B3n6/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -940,7 +960,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2">
         
           
           <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
@@ -959,7 +979,7 @@
             <span class="md-nav__icon md-icon"></span>
             2. prácticas
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
+          <ul class="md-nav__list" data-md-scrollfix="">
             
               
                 
@@ -968,7 +988,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/UD02%20Bases%20de%20datos%20para%20aplicaciones%20web/2.%20pr%C3%A1cticas/ud02_pr%C3%A1ctica1/" class="md-nav__link">
+      <a href="../../../UD02%20Bases%20de%20datos%20para%20aplicaciones%20web/2.%20pr%C3%A1cticas/ud02_pr%C3%A1ctica1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -989,7 +1009,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/UD02%20Bases%20de%20datos%20para%20aplicaciones%20web/2.%20pr%C3%A1cticas/ud02_pr%C3%A1ctica2/" class="md-nav__link">
+      <a href="../../../UD02%20Bases%20de%20datos%20para%20aplicaciones%20web/2.%20pr%C3%A1cticas/ud02_pr%C3%A1ctica2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1010,7 +1030,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/UD02%20Bases%20de%20datos%20para%20aplicaciones%20web/2.%20pr%C3%A1cticas/ud02_pr%C3%A1ctica3/" class="md-nav__link">
+      <a href="../../../UD02%20Bases%20de%20datos%20para%20aplicaciones%20web/2.%20pr%C3%A1cticas/ud02_pr%C3%A1ctica3/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1031,7 +1051,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/UD02%20Bases%20de%20datos%20para%20aplicaciones%20web/2.%20pr%C3%A1cticas/ud02_pr%C3%A1ctica4/" class="md-nav__link">
+      <a href="../../../UD02%20Bases%20de%20datos%20para%20aplicaciones%20web/2.%20pr%C3%A1cticas/ud02_pr%C3%A1ctica4/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1052,7 +1072,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/UD02%20Bases%20de%20datos%20para%20aplicaciones%20web/2.%20pr%C3%A1cticas/ud02_pr%C3%A1ctica5/" class="md-nav__link">
+      <a href="../../../UD02%20Bases%20de%20datos%20para%20aplicaciones%20web/2.%20pr%C3%A1cticas/ud02_pr%C3%A1ctica5/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1073,7 +1093,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/UD02%20Bases%20de%20datos%20para%20aplicaciones%20web/2.%20pr%C3%A1cticas/ud02_pr%C3%A1ctica6/" class="md-nav__link">
+      <a href="../../../UD02%20Bases%20de%20datos%20para%20aplicaciones%20web/2.%20pr%C3%A1cticas/ud02_pr%C3%A1ctica6/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1106,7 +1126,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_7">
         
           
           <label class="md-nav__link" for="__nav_3_2_7" id="__nav_3_2_7_label" tabindex="0">
@@ -1125,7 +1145,7 @@
             <span class="md-nav__icon md-icon"></span>
             Datos
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
+          <ul class="md-nav__list" data-md-scrollfix="">
             
               
                 
@@ -1134,7 +1154,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/UD02%20Bases%20de%20datos%20para%20aplicaciones%20web/2.%20pr%C3%A1cticas/datos/tienda_fuster/" class="md-nav__link">
+      <a href="../../../UD02%20Bases%20de%20datos%20para%20aplicaciones%20web/2.%20pr%C3%A1cticas/datos/tienda_fuster/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1175,25 +1195,30 @@
       
   
   
+    
   
   
+  
     
     
     
+      
+        
+        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked="">
         
           
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -1204,12 +1229,12 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             UD03 Despliegue y Administración de CMS
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
+          <ul class="md-nav__list" data-md-scrollfix="">
             
               
                 
@@ -1223,17 +1248,20 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1">
         
           
-          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -1249,7 +1277,7 @@
             <span class="md-nav__icon md-icon"></span>
             1. teoría
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
+          <ul class="md-nav__list" data-md-scrollfix="">
             
               
                 
@@ -1258,7 +1286,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/UD03%20Despliegue%20y%20Administraci%C3%B3n%20de%20CMS/1.%20teor%C3%ADa/ut3-sesi%C3%B3n1/" class="md-nav__link">
+      <a href="../../1.%20teor%C3%ADa/ut3-sesi%C3%B3n1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1279,7 +1307,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/UD03%20Despliegue%20y%20Administraci%C3%B3n%20de%20CMS/1.%20teor%C3%ADa/ut3-sesi%C3%B3n2/" class="md-nav__link">
+      <a href="../../1.%20teor%C3%ADa/ut3-sesi%C3%B3n2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1300,7 +1328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/UD03%20Despliegue%20y%20Administraci%C3%B3n%20de%20CMS/1.%20teor%C3%ADa/ut3-sesi%C3%B3n3/" class="md-nav__link">
+      <a href="../../1.%20teor%C3%ADa/ut3-sesi%C3%B3n3/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1326,25 +1354,30 @@
                 
   
   
+    
   
   
+  
     
     
     
       
       
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
         
           
-          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" checked="">
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -1355,12 +1388,12 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4_2">
             <span class="md-nav__icon md-icon"></span>
             2. prácticas
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
+          <ul class="md-nav__list" data-md-scrollfix="">
             
               
                 
@@ -1369,7 +1402,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/UD03%20Despliegue%20y%20Administraci%C3%B3n%20de%20CMS/2.%20pr%C3%A1cticas/ud03_pr%C3%A1ctica1/" class="md-nav__link">
+      <a href="../ud03_pr%C3%A1ctica1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1390,7 +1423,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/UD03%20Despliegue%20y%20Administraci%C3%B3n%20de%20CMS/2.%20pr%C3%A1cticas/ud03_pr%C3%A1ctica2/" class="md-nav__link">
+      <a href="../ud03_pr%C3%A1ctica2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1408,10 +1441,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="/UD03%20Despliegue%20y%20Administraci%C3%B3n%20de%20CMS/2.%20pr%C3%A1cticas/ud03_pr%C3%A1ctica3/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    3.3: Personalización Visual, Temas y Ecosistema de Plugins en WordPress
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -1420,6 +1473,110 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#parte-1-ejemplo-practico-guiado-instalacion-de-tema-y-plugin-de-formulario" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parte 1: Ejemplo Práctico Guiado (Instalación de Tema y Plugin de Formulario)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Parte 1: Ejemplo Práctico Guiado (Instalación de Tema y Plugin de Formulario)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#paso-1-instalacion-y-activacion-del-tema-astra" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 1: Instalación y Activación del Tema Astra
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paso-2-instalacion-del-plugin-contact-form-7" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 2: Instalación del Plugin Contact Form 7
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paso-3-integracion-del-formulario-en-una-pagina" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 3: Integración del Formulario en una Página
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parte-2-practica-autonoma-evaluativa" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parte 2: Práctica Autónoma Evaluativa
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Parte 2: Práctica Autónoma Evaluativa">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#escenario-de-trabajo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Escenario de Trabajo
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tareas-a-realizar" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tareas a Realizar
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#entregables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Entregables
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1459,7 +1616,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5">
         
           
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
@@ -1478,7 +1635,7 @@
             <span class="md-nav__icon md-icon"></span>
             UD04 WordPress Profesional
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
+          <ul class="md-nav__list" data-md-scrollfix="">
             
               
                 
@@ -1499,7 +1656,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1">
         
           
           <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
@@ -1518,7 +1675,7 @@
             <span class="md-nav__icon md-icon"></span>
             1. teoría
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
+          <ul class="md-nav__list" data-md-scrollfix="">
             
               
                 
@@ -1527,7 +1684,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/UD04%20WordPress%20Profesional/1.%20teor%C3%ADa/ut4-sesi%C3%B3n1/" class="md-nav__link">
+      <a href="../../../UD04%20WordPress%20Profesional/1.%20teor%C3%ADa/ut4-sesi%C3%B3n1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1548,7 +1705,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/UD04%20WordPress%20Profesional/1.%20teor%C3%ADa/ut4-sesi%C3%B3n2/" class="md-nav__link">
+      <a href="../../../UD04%20WordPress%20Profesional/1.%20teor%C3%ADa/ut4-sesi%C3%B3n2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1569,7 +1726,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/UD04%20WordPress%20Profesional/1.%20teor%C3%ADa/ut4-sesi%C3%B3n3/" class="md-nav__link">
+      <a href="../../../UD04%20WordPress%20Profesional/1.%20teor%C3%ADa/ut4-sesi%C3%B3n3/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1590,7 +1747,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/UD04%20WordPress%20Profesional/1.%20teor%C3%ADa/ut4-sesi%C3%B3n4/" class="md-nav__link">
+      <a href="../../../UD04%20WordPress%20Profesional/1.%20teor%C3%ADa/ut4-sesi%C3%B3n4/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1631,7 +1788,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2">
         
           
           <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
@@ -1650,7 +1807,7 @@
             <span class="md-nav__icon md-icon"></span>
             2. prácticas
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
+          <ul class="md-nav__list" data-md-scrollfix="">
             
               
                 
@@ -1659,7 +1816,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/UD04%20WordPress%20Profesional/2.%20pr%C3%A1cticas/ud04_pr%C3%A1ctica1/" class="md-nav__link">
+      <a href="../../../UD04%20WordPress%20Profesional/2.%20pr%C3%A1cticas/ud04_pr%C3%A1ctica1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1680,7 +1837,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/UD04%20WordPress%20Profesional/2.%20pr%C3%A1cticas/ud04_pr%C3%A1ctica2/" class="md-nav__link">
+      <a href="../../../UD04%20WordPress%20Profesional/2.%20pr%C3%A1cticas/ud04_pr%C3%A1ctica2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1701,7 +1858,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/UD04%20WordPress%20Profesional/2.%20pr%C3%A1cticas/ud04_pr%C3%A1ctica3/" class="md-nav__link">
+      <a href="../../../UD04%20WordPress%20Profesional/2.%20pr%C3%A1cticas/ud04_pr%C3%A1ctica3/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1722,7 +1879,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/UD04%20WordPress%20Profesional/2.%20pr%C3%A1cticas/ud04_pr%C3%A1ctica4/" class="md-nav__link">
+      <a href="../../../UD04%20WordPress%20Profesional/2.%20pr%C3%A1cticas/ud04_pr%C3%A1ctica4/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1770,7 +1927,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6">
         
           
           <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
@@ -1789,7 +1946,7 @@
             <span class="md-nav__icon md-icon"></span>
             UD05 Mantenimiento y Backups
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
+          <ul class="md-nav__list" data-md-scrollfix="">
             
               
                 
@@ -1810,7 +1967,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_1">
         
           
           <label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="0">
@@ -1829,7 +1986,7 @@
             <span class="md-nav__icon md-icon"></span>
             1. teoría
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
+          <ul class="md-nav__list" data-md-scrollfix="">
             
               
                 
@@ -1838,7 +1995,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/UD05%20Mantenimiento%20y%20Backups/1.%20teor%C3%ADa/ut5-sesi%C3%B3n1/" class="md-nav__link">
+      <a href="../../../UD05%20Mantenimiento%20y%20Backups/1.%20teor%C3%ADa/ut5-sesi%C3%B3n1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1859,7 +2016,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/UD05%20Mantenimiento%20y%20Backups/1.%20teor%C3%ADa/ut5-sesi%C3%B3n2/" class="md-nav__link">
+      <a href="../../../UD05%20Mantenimiento%20y%20Backups/1.%20teor%C3%ADa/ut5-sesi%C3%B3n2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1880,7 +2037,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/UD05%20Mantenimiento%20y%20Backups/1.%20teor%C3%ADa/ut5-sesi%C3%B3n3/" class="md-nav__link">
+      <a href="../../../UD05%20Mantenimiento%20y%20Backups/1.%20teor%C3%ADa/ut5-sesi%C3%B3n3/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1901,7 +2058,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/UD05%20Mantenimiento%20y%20Backups/1.%20teor%C3%ADa/ut5-sesi%C3%B3n4/" class="md-nav__link">
+      <a href="../../../UD05%20Mantenimiento%20y%20Backups/1.%20teor%C3%ADa/ut5-sesi%C3%B3n4/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1942,7 +2099,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2">
         
           
           <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
@@ -1961,7 +2118,7 @@
             <span class="md-nav__icon md-icon"></span>
             2. prácticas
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
+          <ul class="md-nav__list" data-md-scrollfix="">
             
               
                 
@@ -1970,7 +2127,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/UD05%20Mantenimiento%20y%20Backups/2.%20pr%C3%A1cticas/ud05_pr%C3%A1ctica1/" class="md-nav__link">
+      <a href="../../../UD05%20Mantenimiento%20y%20Backups/2.%20pr%C3%A1cticas/ud05_pr%C3%A1ctica1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1991,7 +2148,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/UD05%20Mantenimiento%20y%20Backups/2.%20pr%C3%A1cticas/ud05_pr%C3%A1ctica2/" class="md-nav__link">
+      <a href="../../../UD05%20Mantenimiento%20y%20Backups/2.%20pr%C3%A1cticas/ud05_pr%C3%A1ctica2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2012,7 +2169,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/UD05%20Mantenimiento%20y%20Backups/2.%20pr%C3%A1cticas/ud05_pr%C3%A1ctica3/" class="md-nav__link">
+      <a href="../../../UD05%20Mantenimiento%20y%20Backups/2.%20pr%C3%A1cticas/ud05_pr%C3%A1ctica3/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2033,7 +2190,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/UD05%20Mantenimiento%20y%20Backups/2.%20pr%C3%A1cticas/ud05_pr%C3%A1ctica4/" class="md-nav__link">
+      <a href="../../../UD05%20Mantenimiento%20y%20Backups/2.%20pr%C3%A1cticas/ud05_pr%C3%A1ctica4/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2070,7 +2227,7 @@
             
             
               
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -2079,6 +2236,100 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#parte-1-ejemplo-practico-guiado-instalacion-de-tema-y-plugin-de-formulario" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parte 1: Ejemplo Práctico Guiado (Instalación de Tema y Plugin de Formulario)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Parte 1: Ejemplo Práctico Guiado (Instalación de Tema y Plugin de Formulario)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#paso-1-instalacion-y-activacion-del-tema-astra" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 1: Instalación y Activación del Tema Astra
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paso-2-instalacion-del-plugin-contact-form-7" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 2: Instalación del Plugin Contact Form 7
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paso-3-integracion-del-formulario-en-una-pagina" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 3: Integración del Formulario en una Página
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parte-2-practica-autonoma-evaluativa" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parte 2: Práctica Autónoma Evaluativa
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Parte 2: Práctica Autónoma Evaluativa">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#escenario-de-trabajo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Escenario de Trabajo
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tareas-a-realizar" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tareas a Realizar
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#entregables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Entregables
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -2090,8 +2341,132 @@
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
                 
-  <h1>404 - Not found</h1>
+                  
 
+
+<h1 id="33-personalizacion-visual-temas-y-ecosistema-de-plugins-en-wordpress">3.3: Personalización Visual, Temas y Ecosistema de Plugins en WordPress</h1>
+<div class="admonition info">
+<p class="admonition-title">Ficha de la Sesión</p>
+<ul>
+<li><strong>Módulo:</strong> Aplicaciones Web (2º SMX)</li>
+<li><strong>Unidad de Trabajo:</strong> UD 3 — WordPress Esencial y Publicación</li>
+<li><strong>Sesión:</strong> Sesión 3.3 (4 horas - Sesión Integrada Semanal)</li>
+<li><strong>Entorno de trabajo:</strong> LliureX 21 / Ubuntu Desktop 24.04 LTS</li>
+<li><strong>Resultados de Aprendizaje:</strong> RA3 (Criterios c, d, e)</li>
+</ul>
+</div>
+<h2 id="parte-1-ejemplo-practico-guiado-instalacion-de-tema-y-plugin-de-formulario">Parte 1: Ejemplo Práctico Guiado (Instalación de Tema y Plugin de Formulario)</h2>
+<p>Sigue atentamente los siguientes pasos en tu portal <code>blog_tic</code> para instalar un tema corporativo ligero y configurar tu primer plugin de interacción con el usuario.</p>
+<h3 id="paso-1-instalacion-y-activacion-del-tema-astra">Paso 1: Instalación y Activación del Tema Astra</h3>
+<ol>
+<li>Accede al panel de administración: <code>http://localhost/blog_tic/wp-admin</code>.</li>
+<li>En el menú lateral, ve a <strong>Apariencia &gt; Temas</strong>.</li>
+<li>Haz clic en el botón superior <strong>Añadir nuevo tema</strong>.</li>
+<li>En el buscador de la derecha escribe: <code>Astra</code>.</li>
+<li>Haz clic en <strong>Instalar</strong> y, tras completarse la descarga, pulsa <strong>Activar</strong>.</li>
+<li>Abre una pestaña nueva y visita <code>http://localhost/blog_tic/</code> para comprobar el cambio en la maquetación y tipografía de la web.</li>
+</ol>
+<h3 id="paso-2-instalacion-del-plugin-contact-form-7">Paso 2: Instalación del Plugin Contact Form 7</h3>
+<ol>
+<li>En el menú lateral, ve a <strong>Plugins &gt; Añadir nuevo plugin</strong>.</li>
+<li>Busca en el repositorio: <code>Contact Form 7</code>.</li>
+<li>Haz clic en <strong>Instalar ahora</strong> y seguidamente en <strong>Activar</strong>.</li>
+<li>Observa que aparece un nuevo elemento en el menú lateral izquierdo llamado <strong>Contacto</strong>.</li>
+</ol>
+<h3 id="paso-3-integracion-del-formulario-en-una-pagina">Paso 3: Integración del Formulario en una Página</h3>
+<ol>
+<li>Ve a <strong>Contacto &gt; Formularios de contacto</strong> y copia el código corto (<em>Shortcode</em>) generado por defecto (ejemplo: <code>[contact-form-7 id="123" title="Formulario de contacto 1"]</code>).</li>
+<li>Ve a <strong>Páginas &gt; Añadir nueva página</strong>.</li>
+<li>Titula la página como <code>Contactar con Soporte TIC</code>.</li>
+<li>Añade un bloque de tipo <strong>Shortcode</strong> (o pégalo directamente en un bloque de párrafo) e inserta el código corto copiado.</li>
+<li>Haz clic en <strong>Publicar</strong>.</li>
+<li>Abre la página en el navegador y verifica que el formulario se dibuja con campos para nombre, correo, asunto y mensaje.</li>
+</ol>
+<h2 id="parte-2-practica-autonoma-evaluativa">Parte 2: Práctica Autónoma Evaluativa</h2>
+<p>Realiza las siguientes tareas de personalización y extensión en tu portal de prácticas de forma individual.</p>
+<h3 id="escenario-de-trabajo">Escenario de Trabajo</h3>
+<p>La dirección del IES Joan Fuster te encarga adaptar estéticamente el portal <code>blog_tic</code> para que funcione como un tablón técnico corporativo. Debes cambiar el diseño visual, integrar una tabla de inventario mediante un plugin especializado y añadir un módulo de contacto con campos adaptados a partes de incidencias.</p>
+<h3 id="tareas-a-realizar">Tareas a Realizar</h3>
+<ol>
+<li><strong>Personalización del Tema Visual:</strong></li>
+<li>Instala y activa un tema corporativo alternativo del repositorio oficial (por ejemplo <code>GeneratePress</code>, <code>OceanWP</code> o <code>Neve</code>).</li>
+<li>
+<p>Ve a <strong>Apariencia &gt; Personalizar</strong> (o ajustes del tema) y configura:</p>
+<ul>
+<li><strong>Identidad del sitio:</strong> Título <code>Soporte Informático - IES Joan Fuster</code> y descripción corta <code>Módulo de Aplicaciones Web - 2º SMX</code>.</li>
+<li>Asigna un color de fondo o cabecera acorde a la imagen institucional.</li>
+</ul>
+</li>
+<li>
+<p><strong>Instalación y Configuración del Plugin de Tablas (<code>TablePress</code>):</strong></p>
+<ul>
+<li>Instala y activa desde el repositorio oficial el plugin: <code>TablePress</code>.</li>
+<li>Ve a la sección <strong>TablePress &gt; Añadir nueva tabla</strong>.</li>
+<li>Crea una tabla llamada <code>Inventario Aula 204</code> con 4 filas y 3 columnas:<ul>
+<li>Columnas: <em>Equipo / Dispositivo</em>, <em>Ubicación / Rack</em>, <em>Estado Operativo</em>.</li>
+<li>Rellena las filas con 3 equipos del taller (por ejemplo: Switch Central, Servidor Ubuntu, Puesto Alumno 01) indicando su estado.</li>
+</ul>
+</li>
+<li>Copia el <em>shortcode</em> de la tabla creada.</li>
+</ul>
+</li>
+<li>
+<p><strong>Publicación de la Página de Inventario:</strong></p>
+<ul>
+<li>Crea una nueva página estática titulada <code>Estado del Laboratorio</code>.</li>
+<li>Inserta el <em>shortcode</em> de TablePress y publica la página.</li>
+<li>Añade esta página al menú de navegación principal del sitio.</li>
+</ul>
+</li>
+<li>
+<p><strong>Creación de Formulario de Partes de Incidencias:</strong></p>
+<ul>
+<li>En el plugin de contacto, crea un nuevo formulario titulado <code>Parte de Incidencia Técnica</code>.</li>
+<li>Modifica los campos para que solicite:<ul>
+<li>Nombre del alumno/profesor solicitante (obligatorio).</li>
+<li>Número de puesto de trabajo o aula (obligatorio).</li>
+<li>Descripción detallada del fallo hardware/software (obligatorio).</li>
+</ul>
+</li>
+<li>Inserta este formulario en una página llamada <code>Reportar Avería</code>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Auditoría de Archivos en el Servidor Linux:</strong></p>
+<ul>
+<li>Abre la terminal de Linux y lista las carpetas de temas y plugins para comprobar que los archivos físicos se han descargado con la propiedad correcta:
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>ls<span class="w"> </span>-la<span class="w"> </span>/var/www/html/blog_tic/wp-content/themes/
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>ls<span class="w"> </span>-la<span class="w"> </span>/var/www/html/blog_tic/wp-content/plugins/
+</code></pre></div></li>
+</ul>
+</li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Comprobación de Permisos en Descargas</p>
+<p>Si al instalar un plugin o tema WordPress te solicita datos de conexión FTP, significa que Apache no tiene permisos de escritura en <code>wp-content/</code>. Corrige la propiedad ejecutando <code>sudo chown -R www-data:www-data /var/www/html/blog_tic/wp-content/</code>.</p>
+</div>
+<h2 id="entregables">Entregables</h2>
+<p>Genera un documento PDF denominado <code>UD03_S3.3_Apellido_Nombre.pdf</code> con las siguientes evidencias:</p>
+<ol>
+<li><strong>Captura 1:</strong> Vista de <strong>Apariencia &gt; Temas</strong> mostrando el tema corporativo activo y la personalización del título y descripción.</li>
+<li><strong>Captura 2:</strong> Panel de <strong>TablePress</strong> mostrando la edición de las filas y columnas del inventario.</li>
+<li><strong>Captura 3:</strong> Navegador web visualizando la página pública <code>Estado del Laboratorio</code> con la tabla renderizada e integrada en el menú.</li>
+<li><strong>Captura 4:</strong> Navegador web mostrando la página <code>Reportar Avería</code> con el formulario personalizado de incidencias.</li>
+<li><strong>Captura 5:</strong> Salida del comando <code>ls -la /var/www/html/blog_tic/wp-content/plugins/</code> en la terminal de Linux mostrando los módulos instalados y sus permisos.</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
               </article>
             </div>
           
@@ -2099,9 +2474,9 @@
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
-          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden="">
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
   Volver al principio
 </button>
         
@@ -2131,11 +2506,13 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "/", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "content.code.copy", "content.code.annotate"], "search": "/assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "content.code.copy", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
     
     
-      <script src="/assets/javascripts/bundle.525ec568.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.525ec568.min.js"></script>
       
     
-  </body>
-</html>
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>
