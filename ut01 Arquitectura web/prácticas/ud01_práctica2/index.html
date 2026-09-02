@@ -1,0 +1,2538 @@
+<!DOCTYPE html><html lang="es" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Material didáctico y prácticas de Aplicaciones Web (IES Joan Fuster de Bellreguard)">
+      
+      
+        <meta name="author" content="Departamento de Informática">
+      
+      
+      
+        <link rel="prev" href="../ud01_pr%C3%A1ctica1/">
+      
+      
+        <link rel="next" href="../ud01_pr%C3%A1ctica3/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.39">
+    
+    
+      
+        <title>Práctica 1.2: Ejemplo Práctico Guiado (Servicios, Puertos y DocumentRoot) - Aplicaciones Web — 2º SMX</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.8c3ca2c6.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="deep-purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#practica-12-ejemplo-practico-guiado-servicios-puertos-y-documentroot" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../../.." title="Aplicaciones Web — 2º SMX" class="md-header__button md-logo" aria-label="Aplicaciones Web — 2º SMX" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Aplicaciones Web — 2º SMX
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Práctica 1.2: Ejemplo Práctico Guiado (Servicios, Puertos y DocumentRoot)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="deep-purple" aria-label="Cambiar a modo oscuro" type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo oscuro" for="__palette_1" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="deep-purple" aria-label="Cambiar a modo claro" type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo claro" for="__palette_0" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required="">
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix="">
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+    
+  
+  Programación Didáctica y Contenidos del Módulo: Aplicaciones Web (2º SMX)
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../ud01_pr%C3%A1ctica1/" class="md-tabs__link">
+          
+  
+  ut01 Arquitectura web
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../ut02%20Bases%20de%20datos%20para%20aplicaciones%20web/pr%C3%A1cticas/ud02_pr%C3%A1ctica1/" class="md-tabs__link">
+          
+  
+  ut02 Bases de datos para aplicaciones web
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../ut03%20Despliegue%20y%20Administraci%C3%B3n%20de%20CMS/pr%C3%A1cticas/ud03_pr%C3%A1ctica1/" class="md-tabs__link">
+          
+  
+  ut03 Despliegue y Administración de CMS
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../ut04%20WordPress%20Profesional%2C%20Maquetaci%C3%B3n%20Visual%20y%20Comercio%20Electr%C3%B3nico/pr%C3%A1cticas/ud04_pr%C3%A1ctica1/" class="md-tabs__link">
+          
+  
+  ut04 WordPress Profesional, Maquetación Visual y Comercio Electrónico
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../ut05%20Mantenimiento%2C%20Copias%20de%20Seguridad%20y%20Migraci%C3%B3n%20Web/pr%C3%A1cticas/ud05_pr%C3%A1ctica1/" class="md-tabs__link">
+          
+  
+  ut05 Mantenimiento, Copias de Seguridad y Migración Web
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Aplicaciones Web — 2º SMX" class="md-nav__button md-logo" aria-label="Aplicaciones Web — 2º SMX" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+
+    </a>
+    Aplicaciones Web — 2º SMX
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix="">
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Programación Didáctica y Contenidos del Módulo: Aplicaciones Web (2º SMX)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked="">
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    ut01 Arquitectura web
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            ut01 Arquitectura web
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" checked="">
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Prácticas
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Prácticas
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ud01_pr%C3%A1ctica1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Práctica 1.1: Arquitectura Web y Fundamentos de Servidores (Práctica)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Práctica 1.2: Ejemplo Práctico Guiado (Servicios, Puertos y DocumentRoot)
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Práctica 1.2: Ejemplo Práctico Guiado (Servicios, Puertos y DocumentRoot)
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#paso-1-comprobar-el-estado-del-servicio-web" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 1: Comprobar el estado del servicio web
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#paso-2-verificar-los-puertos-abiertos-con-ss" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 2: Verificar los puertos abiertos con ss
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#paso-3-explorar-el-documentroot-predeterminado" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 3: Explorar el DocumentRoot predeterminado
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#paso-4-crear-una-seccion-web-propia-y-ajustar-permisos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 4: Crear una sección web propia y ajustar permisos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parte-2-practica-autonoma" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parte 2: Práctica Autónoma
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Parte 2: Práctica Autónoma">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#escenario-profesional" class="md-nav__link">
+    <span class="md-ellipsis">
+      Escenario Profesional
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#requisitos-de-la-tarea" class="md-nav__link">
+    <span class="md-ellipsis">
+      Requisitos de la Tarea
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#entregables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Entregables
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ud01_pr%C3%A1ctica3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Práctica1.3: Introducción al Procesamiento Dinámico con PHP y Módulos de Apache (Práctica)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ud01_pr%C3%A1ctica4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Práctica 1.4 Arquitectura de Bases de Datos en Entornos Web y Gestor MariaDB (Práctica)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2">
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Teoría
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Teoría
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teor%C3%ADa/ud01_sesi%C3%B3n1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.1: La Arquitectura Web y el Modelo Cliente-Servidor
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teor%C3%ADa/ud01_sesi%C3%B3n2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.2: Servicios en Linux, Puertos y Gestión de Contenido Estático
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teor%C3%ADa/ud01_sesi%C3%B3n3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.3: Introducción al Procesamiento Dinámico con PHP y Módulos de Apache
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teor%C3%ADa/ud01_sesi%C3%B3n4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.4: Arquitectura de Bases de Datos en Entornos Web y Gestor MariaDB
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3">
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    ut02 Bases de datos para aplicaciones web
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            ut02 Bases de datos para aplicaciones web
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1">
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Prácticas
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            Prácticas
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ut02%20Bases%20de%20datos%20para%20aplicaciones%20web/pr%C3%A1cticas/ud02_pr%C3%A1ctica1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Práctica 2.1: Despliegue del Motor MariaDB y phpMyAdmin en Linux
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ut02%20Bases%20de%20datos%20para%20aplicaciones%20web/pr%C3%A1cticas/ud02_pr%C3%A1ctica2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Práctica 2.2: Arquitectura de Red de MariaDB, Autenticación y Resolución de Incidencias
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ut02%20Bases%20de%20datos%20para%20aplicaciones%20web/pr%C3%A1cticas/ud02_pr%C3%A1ctica3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Práctica 2.3: Estructura de Datos Web, Tipos de Campos, Claves y Operaciones Gráficas (Práctica)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ut02%20Bases%20de%20datos%20para%20aplicaciones%20web/pr%C3%A1cticas/ud02_pr%C3%A1ctica4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Práctica 2.4: Juegos de Caracteres, Codificación UTF-8 y Cotejamientos (Práctica)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ut02%20Bases%20de%20datos%20para%20aplicaciones%20web/pr%C3%A1cticas/ud02_pr%C3%A1ctica5/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Práctica 2.5: Gestión Granular de Usuarios, Privilegios y Seguridad en MariaDB
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ut02%20Bases%20de%20datos%20para%20aplicaciones%20web/pr%C3%A1cticas/ud02_pr%C3%A1ctica6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Práctica 2.6: Copias de Seguridad, Volcados SQL y Restauración de Bases de Datos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_7">
+        
+          
+          <label class="md-nav__link" for="__nav_3_1_7" id="__nav_3_1_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Datos
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_1_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1_7">
+            <span class="md-nav__icon md-icon"></span>
+            Datos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ut02%20Bases%20de%20datos%20para%20aplicaciones%20web/pr%C3%A1cticas/datos/tienda_fuster/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Base de Datos de Prueba: tienda_fuster
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2">
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Teoría
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Teoría
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ut02%20Bases%20de%20datos%20para%20aplicaciones%20web/teor%C3%ADa/ut2-sesi%C3%B3n1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.1: Despliegue del Motor MariaDB y phpMyAdmin en Linux (Teoría)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ut02%20Bases%20de%20datos%20para%20aplicaciones%20web/teor%C3%ADa/ut2-sesi%C3%B3n2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.2: Arquitectura de Red de MariaDB, Autenticación y Resolución de Incidencias
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ut02%20Bases%20de%20datos%20para%20aplicaciones%20web/teor%C3%ADa/ut2-sesi%C3%B3n3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.3: Estructura de Datos Web, Tipos de Campos, Claves y Operaciones Gráficas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ut02%20Bases%20de%20datos%20para%20aplicaciones%20web/teor%C3%ADa/ut2-sesi%C3%B3n4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.4: Juegos de Caracteres, Codificación UTF-8 y Cotejamientos (Teoría)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ut02%20Bases%20de%20datos%20para%20aplicaciones%20web/teor%C3%ADa/ut2-sesi%C3%B3n5/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.5: Gestión Granular de Usuarios, Privilegios y Seguridad en MariaDB (Teoría)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ut02%20Bases%20de%20datos%20para%20aplicaciones%20web/teor%C3%ADa/ut2-sesi%C3%B3n6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.6: Copias de Seguridad, Volcados SQL y Restauración de Bases de Datos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4">
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    ut03 Despliegue y Administración de CMS
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            ut03 Despliegue y Administración de CMS
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1">
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Prácticas
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            Prácticas
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ut03%20Despliegue%20y%20Administraci%C3%B3n%20de%20CMS/pr%C3%A1cticas/ud03_pr%C3%A1ctica1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.1: Introducción a los CMS y Despliegue Asistido de WordPress (Práctica)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ut03%20Despliegue%20y%20Administraci%C3%B3n%20de%20CMS/pr%C3%A1cticas/ud03_pr%C3%A1ctica2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.2: Estructura de Contenidos, Taxonomías, Menús y Perfiles de Usuario en WordPress
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ut03%20Despliegue%20y%20Administraci%C3%B3n%20de%20CMS/pr%C3%A1cticas/ud03_pr%C3%A1ctica3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.3: Personalización Visual, Temas y Ecosistema de Plugins en WordPress
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2">
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Teoría
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Teoría
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ut03%20Despliegue%20y%20Administraci%C3%B3n%20de%20CMS/teor%C3%ADa/ut3-sesi%C3%B3n1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.1: Introducción a los CMS y Despliegue Asistido de WordPress (Teoría)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ut03%20Despliegue%20y%20Administraci%C3%B3n%20de%20CMS/teor%C3%ADa/ut3-sesi%C3%B3n2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.2: Estructura de Contenidos, Taxonomías, Menús y Perfiles de Usuario en WordPress
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ut03%20Despliegue%20y%20Administraci%C3%B3n%20de%20CMS/teor%C3%ADa/ut3-sesi%C3%B3n3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.3: Personalización Visual, Temas y Ecosistema de Plugins en WordPress
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5">
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    ut04 WordPress Profesional, Maquetación Visual y Comercio Electrónico
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            ut04 WordPress Profesional, Maquetación Visual y Comercio Electrónico
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1">
+        
+          
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Prácticas
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            Prácticas
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ut04%20WordPress%20Profesional%2C%20Maquetaci%C3%B3n%20Visual%20y%20Comercio%20Electr%C3%B3nico/pr%C3%A1cticas/ud04_pr%C3%A1ctica1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Práctica 4.1: Maquetación Visual Moderna, Diseño Responsive y Constructores en WordPress
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ut04%20WordPress%20Profesional%2C%20Maquetaci%C3%B3n%20Visual%20y%20Comercio%20Electr%C3%B3nico/pr%C3%A1cticas/ud04_pr%C3%A1ctica2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Práctica 4.2: Comercio Electrónico con WooCommerce: Catálogo, Productos y Gestión de Stock
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ut04%20WordPress%20Profesional%2C%20Maquetaci%C3%B3n%20Visual%20y%20Comercio%20Electr%C3%B3nico/pr%C3%A1cticas/ud04_pr%C3%A1ctica3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Práctica 4.3: Pasarelas de Pago, Métodos de Envío e Impuestos en WooCommerce
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ut04%20WordPress%20Profesional%2C%20Maquetaci%C3%B3n%20Visual%20y%20Comercio%20Electr%C3%B3nico/pr%C3%A1cticas/ud04_pr%C3%A1ctica4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Práctica 4.4: Optimización Web (WPO), Formatos Modernos de Imagen, Caché y SEO Técnico en WordPress
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2">
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Teoría
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            Teoría
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ut04%20WordPress%20Profesional%2C%20Maquetaci%C3%B3n%20Visual%20y%20Comercio%20Electr%C3%B3nico/teor%C3%ADa/ut4-sesi%C3%B3n1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.1: Maquetación Visual Moderna, Diseño Responsive y Constructores en WordPress
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ut04%20WordPress%20Profesional%2C%20Maquetaci%C3%B3n%20Visual%20y%20Comercio%20Electr%C3%B3nico/teor%C3%ADa/ut4-sesi%C3%B3n2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.2: Comercio Electrónico con WooCommerce: Catálogo, Productos y Gestión de Stock
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ut04%20WordPress%20Profesional%2C%20Maquetaci%C3%B3n%20Visual%20y%20Comercio%20Electr%C3%B3nico/teor%C3%ADa/ut4-sesi%C3%B3n3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.3: Pasarelas de Pago, Métodos de Envío e Impuestos en WooCommerce
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ut04%20WordPress%20Profesional%2C%20Maquetaci%C3%B3n%20Visual%20y%20Comercio%20Electr%C3%B3nico/teor%C3%ADa/ut4-sesi%C3%B3n4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.4: Optimización Web (WPO), Formatos Modernos de Imagen, Caché y SEO Técnico en WordPress
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6">
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    ut05 Mantenimiento, Copias de Seguridad y Migración Web
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            ut05 Mantenimiento, Copias de Seguridad y Migración Web
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_1">
+        
+          
+          <label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Prácticas
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_1">
+            <span class="md-nav__icon md-icon"></span>
+            Prácticas
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ut05%20Mantenimiento%2C%20Copias%20de%20Seguridad%20y%20Migraci%C3%B3n%20Web/pr%C3%A1cticas/ud05_pr%C3%A1ctica1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Práctica 5.1: Estrategias de Respaldo, Automatización y Restauración en WordPress con UpdraftPlus
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ut05%20Mantenimiento%2C%20Copias%20de%20Seguridad%20y%20Migraci%C3%B3n%20Web/pr%C3%A1cticas/ud05_pr%C3%A1ctica2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Práctica 5.2: Empaquetado, Clonación y Migración de Sitios WordPress con Duplicator
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ut05%20Mantenimiento%2C%20Copias%20de%20Seguridad%20y%20Migraci%C3%B3n%20Web/pr%C3%A1cticas/ud05_pr%C3%A1ctica3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Práctica 5.3: Bastionado de Sistemas Web, Protección contra Ataques de Fuerza Bruta y Cortafuegos WAF
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ut05%20Mantenimiento%2C%20Copias%20de%20Seguridad%20y%20Migraci%C3%B3n%20Web/pr%C3%A1cticas/ud05_pr%C3%A1ctica4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Práctica 5.4: Monitorización de Logs, Entornos de Pruebas (Staging) y Ciclo de Actualizaciones Seguras
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2">
+        
+          
+          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Teoría
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            Teoría
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ut05%20Mantenimiento%2C%20Copias%20de%20Seguridad%20y%20Migraci%C3%B3n%20Web/teor%C3%ADa/ut5-sesi%C3%B3n1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5.1: Estrategias de Respaldo, Automatización y Restauración en WordPress con UpdraftPlus (Teoría)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ut05%20Mantenimiento%2C%20Copias%20de%20Seguridad%20y%20Migraci%C3%B3n%20Web/teor%C3%ADa/ut5-sesi%C3%B3n2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5.2: Empaquetado, Clonación y Migración de Sitios WordPress con Duplicator
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ut05%20Mantenimiento%2C%20Copias%20de%20Seguridad%20y%20Migraci%C3%B3n%20Web/teor%C3%ADa/ut5-sesi%C3%B3n3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5.3: Bastionado de Sistemas Web, Protección contra Ataques de Fuerza Bruta y Cortafuegos WAF
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ut05%20Mantenimiento%2C%20Copias%20de%20Seguridad%20y%20Migraci%C3%B3n%20Web/teor%C3%ADa/ut5-sesi%C3%B3n4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5.4: Monitorización de Logs, Entornos de Pruebas (Staging) y Ciclo de Actualizaciones Seguras
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#paso-1-comprobar-el-estado-del-servicio-web" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 1: Comprobar el estado del servicio web
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#paso-2-verificar-los-puertos-abiertos-con-ss" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 2: Verificar los puertos abiertos con ss
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#paso-3-explorar-el-documentroot-predeterminado" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 3: Explorar el DocumentRoot predeterminado
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#paso-4-crear-una-seccion-web-propia-y-ajustar-permisos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 4: Crear una sección web propia y ajustar permisos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parte-2-practica-autonoma" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parte 2: Práctica Autónoma
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Parte 2: Práctica Autónoma">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#escenario-profesional" class="md-nav__link">
+    <span class="md-ellipsis">
+      Escenario Profesional
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#requisitos-de-la-tarea" class="md-nav__link">
+    <span class="md-ellipsis">
+      Requisitos de la Tarea
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#entregables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Entregables
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="practica-12-ejemplo-practico-guiado-servicios-puertos-y-documentroot">Práctica 1.2: Ejemplo Práctico Guiado (Servicios, Puertos y DocumentRoot)</h1>
+<div class="admonition info">
+<p class="admonition-title">Ficha de la Sesión</p>
+<ul>
+<li><strong>Módulo:</strong> Aplicaciones Web (2º SMX)</li>
+<li><strong>Unidad de Trabajo:</strong> UD 1 — Arquitectura Web</li>
+<li><strong>Sesión:</strong> Sesión 2 (3 horas - Taller de Laboratorio)</li>
+<li><strong>Entorno de trabajo:</strong> LliureX 21 / Ubuntu Desktop 24.04 LTS</li>
+<li><strong>Resultados de Aprendizaje:</strong> RA1 (Criterios a, b, c)</li>
+</ul>
+</div>
+<p>Sigue atentamente los siguientes pasos en tu terminal para aprender a controlar el servicio web, verificar los puertos abiertos en tu sistema y estructurar directorios web.</p>
+<h2 id="paso-1-comprobar-el-estado-del-servicio-web">Paso 1: Comprobar el estado del servicio web</h2>
+<ol>
+<li>Abre un terminal en tu equipo Linux (<code>Ctrl + Alt + T</code>).</li>
+<li>Comprueba el estado del servicio web Apache mediante el gestor del sistema:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>status<span class="w"> </span>apache2
+</code></pre></div></li>
+<li>Observa la salida: si indica <code>Active: active (running)</code> en color verde, el servicio está en funcionamiento.</li>
+<li>Si estuviera detenido (<code>inactive (dead)</code>), arráncalo con:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w"> </span>apache2
+</code></pre></div></li>
+</ol>
+<h2 id="paso-2-verificar-los-puertos-abiertos-con-ss">Paso 2: Verificar los puertos abiertos con <code>ss</code></h2>
+<p>Comprueba qué programas están escuchando conexiones de red en tu equipo.</p>
+<ol>
+<li>Ejecuta en el terminal:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>sudo<span class="w"> </span>ss<span class="w"> </span>-tulpn<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>:80
+</code></pre></div></li>
+<li>Analiza el resultado:</li>
+<li><code>tcp</code>: Protocolo de transporte.</li>
+<li><code>LISTEN</code>: El servicio está activo esperando clientes.</li>
+<li><code>0.0.0.0:80</code> o <code>*:80</code>: Está escuchando en el puerto 80 en todas las interfaces de red.</li>
+<li><code>users:(("apache2",...))</code>: Confirma que el proceso que ocupa el puerto es el servidor Apache.</li>
+<li><code>apache2</code>: El nombre del proceso que está escuchando en el puerto 80.</li>
+</ol>
+<h2 id="paso-3-explorar-el-documentroot-predeterminado">Paso 3: Explorar el DocumentRoot predeterminado</h2>
+<ol>
+<li>Navega hasta el directorio raíz de documentos web:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">cd</span><span class="w"> </span>/var/www/html
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>ls<span class="w"> </span>-la
+</code></pre></div></li>
+<li>Observa la presencia del archivo <code>index.html</code> inicial instalado por el sistema.</li>
+</ol>
+<h2 id="paso-4-crear-una-seccion-web-propia-y-ajustar-permisos">Paso 4: Crear una sección web propia y ajustar permisos</h2>
+<ol>
+<li>Crea una carpeta llamada <code>taller1</code> dentro de la raíz web:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>sudo<span class="w"> </span>mkdir<span class="w"> </span>/var/www/html/taller1
+</code></pre></div></li>
+<li>Crea una página de bienvenida dentro de esa carpeta utilizando el editor de texto de consola <code>nano</code>:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>sudo<span class="w"> </span>nano<span class="w"> </span>/var/www/html/taller1/index.html
+</code></pre></div></li>
+<li>Introduce el siguiente código HTML básico:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">"es"</span><span class="p">&gt;</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">"UTF-8"</span><span class="p">&gt;</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Taller Guiado - 2º SMX<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>    <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Servicio Web Apache Operativo<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Primer despliegue estático en el DocumentRoot de Linux.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div></li>
+<li>Guarda el archivo pulsando <code>Ctrl + O</code>, <code>Enter</code> y sal con <code>Ctrl + X</code>.</li>
+<li>Ajusta los permisos para asegurar que el servidor pueda leer el archivo sin problemas:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>sudo<span class="w"> </span>chown<span class="w"> </span>-R<span class="w"> </span>www-data:www-data<span class="w"> </span>/var/www/html/taller1
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>sudo<span class="w"> </span>chmod<span class="w"> </span><span class="m">755</span><span class="w"> </span>/var/www/html/taller1
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>sudo<span class="w"> </span>chmod<span class="w"> </span><span class="m">644</span><span class="w"> </span>/var/www/html/taller1/index.html
+</code></pre></div></li>
+<li>Abre el navegador web y accede a:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>http://localhost/taller1/
+</code></pre></div>
+   Comprueba que visualizas el texto maquetado.</li>
+</ol>
+<h2 id="parte-2-practica-autonoma">Parte 2: Práctica Autónoma</h2>
+<p>Realiza las siguientes tareas de forma individual y sin asistencia para demostrar que comprendes el flujo de servicios y la gestión de permisos en Linux.</p>
+<h3 id="escenario-profesional">Escenario Profesional</h3>
+<p>La dirección del IES Joan Fuster te ha encargado organizar la estructura de carpetas del servidor web para hospedar dos secciones independientes:
+1. Una sección pública informativa sobre el ciclo formativo de SMX.
+2. Un área técnica interna para almacenar documentación de red.</p>
+<h3 id="requisitos-de-la-tarea">Requisitos de la Tarea</h3>
+<ol>
+<li><strong>Estructura de Directorios:</strong></li>
+<li>
+<p>Dentro de <code>/var/www/html/</code>, crea dos carpetas independientes:</p>
+<ul>
+<li><code>/var/www/html/ciclo_smx/</code></li>
+<li><code>/var/www/html/area_tecnica/</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Creación de Páginas HTML:</strong></p>
+</li>
+<li>En <code>/var/www/html/ciclo_smx/index.html</code>, diseña una página HTML5 válida que contenga:<ul>
+<li>Un encabezado principal (<code>&lt;h1&gt;</code>) con el texto: <code>Ciclo Formativo SMX - IES Joan Fuster</code>.</li>
+<li>Un párrafo que indique tu nombre completo y curso (<code>2º SMX</code>).</li>
+<li>Una tabla (<code>&lt;table&gt;</code>) con dos columnas: <em>Módulo Profesional</em> y <em>Profesor/a</em>, incluyendo las tres asignaturas que cursas conjuntamente (Aplicaciones Web, Seguridad Informática y Servicios en Red).</li>
+</ul>
+</li>
+<li>
+<p>En <code>/var/www/html/area_tecnica/index.html</code>, crea un documento sencillo con un encabezado <code>&lt;h1&gt;</code> que indique: <code>Documentación Interna de Red</code>.</p>
+</li>
+<li>
+<p><strong>Gestión Estricta de Permisos:</strong></p>
+</li>
+<li>Aplica la propiedad de usuario y grupo <code>www-data:www-data</code> a ambas carpetas y a sus archivos contenidos.</li>
+<li>
+<p>Configura los permisos exactos: directorios con <code>755</code> y archivos HTML con <code>644</code>.</p>
+</li>
+<li>
+<p><strong>Simulación y Diagnóstico de Error 403 Forbidden:</strong></p>
+</li>
+<li>Retira deliberadamente los permisos de lectura a la página de la zona técnica ejecutando:
+     <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>sudo<span class="w"> </span>chmod<span class="w"> </span><span class="m">000</span><span class="w"> </span>/var/www/html/area_tecnica/index.html
+</code></pre></div></li>
+<li>Accede desde el navegador a <code>http://localhost/area_tecnica/index.html</code> y comprueba el error que muestra el servidor web.</li>
+<li>
+<p>Restaura los permisos correctos (<code>644</code>) y verifica que vuelve a cargar correctamente.</p>
+</li>
+<li>
+<p><strong>Comprobación de Acceso por Red Local:</strong></p>
+</li>
+<li>Averigua la dirección IP de tu tarjeta de red mediante el comando:
+     <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>ip<span class="w"> </span>a
+</code></pre></div></li>
+<li>Accede desde el navegador web sustituyendo <code>localhost</code> por tu dirección IP real (por ejemplo <code>http://192.168.X.X/ciclo_smx/</code>).</li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Verificación de Sintaxis HTML</p>
+<p>Asegúrate de cerrar todas las etiquetas HTML (<code>&lt;/h1&gt;</code>, <code>&lt;/p&gt;</code>, <code>&lt;/table&gt;</code>, <code>&lt;/body&gt;</code>, <code>&lt;/html&gt;</code>) para que la página sea válida y se renderice de forma limpia en el navegador.</p>
+</div>
+<h2 id="entregables">Entregables</h2>
+<p>Genera un informe técnico en formato PDF con el nombre <code>UD01_S2_Apellido_Nombre.pdf</code> que contenga:</p>
+<ol>
+<li><strong>Captura 1:</strong> Salida del comando <code>sudo ss -tulpn | grep :80</code> en la terminal mostrando el puerto 80 en escucha.</li>
+<li><strong>Captura 2:</strong> Salida del comando <code>ls -la /var/www/html/ciclo_smx/</code> donde se aprecien los permisos <code>rw-r--r--</code> (<code>644</code>) y el propietario <code>www-data</code>.</li>
+<li><strong>Captura 3:</strong> Navegador web mostrando la página <code>http://localhost/ciclo_smx/</code> con la tabla de asignaturas y tu nombre visible.</li>
+<li><strong>Captura 4:</strong> Navegador web mostrando el error <strong>403 Forbidden</strong> obtenido durante la simulación del paso 4.</li>
+<li><strong>Captura 5:</strong> Navegador web mostrando el acceso a la web utilizando la <strong>dirección IP privada</strong> de tu equipo en lugar de <code>localhost</code>.</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden="">
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "content.code.copy", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.525ec568.min.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>
