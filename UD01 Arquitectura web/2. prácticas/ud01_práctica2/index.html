@@ -474,7 +474,7 @@
   <span class="md-ellipsis">
     
   
-    Unidad Didáctica 1: Aplicaciones y servidores web
+    UD1: Aplicaciones y servidores web
   
 
     
@@ -785,6 +785,17 @@
       Tabla de contenidos
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#paso-0-instalacion-de-apache-en-ubuntu-2404-lts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Paso 0: Instalación de Apache en Ubuntu 24.04 LTS
+      
+    </span>
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#paso-1-comprobar-el-estado-del-servicio-web" class="md-nav__link">
@@ -2844,6 +2855,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
+  <a href="#paso-0-instalacion-de-apache-en-ubuntu-2404-lts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Paso 0: Instalación de Apache en Ubuntu 24.04 LTS
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#paso-1-comprobar-el-estado-del-servicio-web" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2947,7 +2969,8 @@
 <div class="admonition info">
 <p class="admonition-title">Referentes de Evaluación y Concreción Curricular</p>
 <ul>
-<li><strong>Módulo Profesional:</strong> Aplicaciones Web — 2º SMX (IES Joan Fuster)</li>
+<li><strong>Módulo Profesional:</strong> Aplicaciones Web (Código 0380) — 2º SMX (IES Joan Fuster)</li>
+<li><strong>Curso Académico:</strong> 2026-2027</li>
 <li><strong>Resultados de Aprendizaje (RA) Referentes:</strong><ul>
 <li><strong>RA1:</strong> Instala servidores de aplicaciones web, evaluando sus características y entornos de aplicación.</li>
 </ul>
@@ -2960,23 +2983,35 @@
 </li>
 </ul>
 </div>
-<p>Sigue atentamente los siguientes pasos en tu terminal para aprender a controlar el servicio web, verificar los puertos abiertos en tu sistema y estructurar directorios web.</p>
+<p>Sigue atentamente los siguientes pasos en tu terminal para aprender a instalar el servidor web en Ubuntu Server 24.04, controlar el servicio, verificar los puertos abiertos y estructurar directorios web.</p>
+<h2 id="paso-0-instalacion-de-apache-en-ubuntu-2404-lts">Paso 0: Instalación de Apache en Ubuntu 24.04 LTS</h2>
+<ol>
+<li>Actualiza la lista de paquetes del sistema operativo:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>update
+</code></pre></div></li>
+<li>Instala el servidor web Apache:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>apache2
+</code></pre></div></li>
+<li>Verifica que la instalación ha finalizado correctamente comprobando la versión o el estado del paquete:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>dpkg<span class="w"> </span>-l<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>apache2
+</code></pre></div></li>
+</ol>
 <h2 id="paso-1-comprobar-el-estado-del-servicio-web">Paso 1: Comprobar el estado del servicio web</h2>
 <ol>
 <li>Abre un terminal en tu equipo Linux (<code>Ctrl + Alt + T</code>).</li>
 <li>Comprueba el estado del servicio web Apache mediante el gestor del sistema:
-   <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>status<span class="w"> </span>apache2
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>status<span class="w"> </span>apache2
 </code></pre></div></li>
 <li>Observa la salida: si indica <code>Active: active (running)</code> en color verde, el servicio está en funcionamiento.</li>
 <li>Si estuviera detenido (<code>inactive (dead)</code>), arráncalo con:
-   <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w"> </span>apache2
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w"> </span>apache2
 </code></pre></div></li>
 </ol>
 <h2 id="paso-2-verificar-los-puertos-abiertos-con-ss">Paso 2: Verificar los puertos abiertos con <code>ss</code></h2>
 <p>Comprueba qué programas están escuchando conexiones de red en tu equipo.</p>
 <ol>
 <li>Ejecuta en el terminal:
-   <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>sudo<span class="w"> </span>ss<span class="w"> </span>-tulpn<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>:80
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>sudo<span class="w"> </span>ss<span class="w"> </span>-tulpn<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>:80
 </code></pre></div></li>
 <li>Analiza el resultado:<ul>
 <li><code>tcp</code>: Protocolo de transporte.</li>
@@ -2990,40 +3025,40 @@
 <h2 id="paso-3-explorar-el-documentroot-predeterminado">Paso 3: Explorar el DocumentRoot predeterminado</h2>
 <ol>
 <li>Navega hasta el directorio raíz de documentos web:
-   <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">cd</span><span class="w"> </span>/var/www/html
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>ls<span class="w"> </span>-la
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nb">cd</span><span class="w"> </span>/var/www/html
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>ls<span class="w"> </span>-la
 </code></pre></div></li>
 <li>Observa la presencia del archivo <code>index.html</code> inicial instalado por el sistema.</li>
 </ol>
 <h2 id="paso-4-crear-una-seccion-web-propia-y-ajustar-permisos">Paso 4: Crear una sección web propia y ajustar permisos</h2>
 <ol>
 <li>Crea una carpeta llamada <code>taller1</code> dentro de la raíz web:
-   <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>sudo<span class="w"> </span>mkdir<span class="w"> </span>/var/www/html/taller1
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>sudo<span class="w"> </span>mkdir<span class="w"> </span>/var/www/html/taller1
 </code></pre></div></li>
 <li>Crea una página de bienvenida dentro de esa carpeta utilizando el editor de texto de consola <code>nano</code>:
-   <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>sudo<span class="w"> </span>nano<span class="w"> </span>/var/www/html/taller1/index.html
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>sudo<span class="w"> </span>nano<span class="w"> </span>/var/www/html/taller1/index.html
 </code></pre></div></li>
 <li>Introduce el siguiente código HTML básico:
-   <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="cp">&lt;!DOCTYPE html&gt;</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">"es"</span><span class="p">&gt;</span>
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">"UTF-8"</span><span class="p">&gt;</span>
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Taller Guiado - 2º SMX<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
-<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
-<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
-<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>    <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Servicio Web Apache Operativo<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
-<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Primer despliegue estático en el DocumentRoot de Linux.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
-<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">"es"</span><span class="p">&gt;</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">"UTF-8"</span><span class="p">&gt;</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Taller Guiado - 2º SMX<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>    <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Servicio Web Apache Operativo<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Primer despliegue estático en el DocumentRoot de Linux.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </code></pre></div></li>
 <li>Guarda el archivo pulsando <code>Ctrl + O</code>, <code>Enter</code> y sal con <code>Ctrl + X</code>.</li>
 <li>Ajusta los permisos para asegurar que el servidor pueda leer el archivo sin problemas:
-   <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>sudo<span class="w"> </span>chown<span class="w"> </span>-R<span class="w"> </span>www-data:www-data<span class="w"> </span>/var/www/html/taller1
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>sudo<span class="w"> </span>chmod<span class="w"> </span><span class="m">755</span><span class="w"> </span>/var/www/html/taller1
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>sudo<span class="w"> </span>chmod<span class="w"> </span><span class="m">644</span><span class="w"> </span>/var/www/html/taller1/index.html
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>sudo<span class="w"> </span>chown<span class="w"> </span>-R<span class="w"> </span>www-data:www-data<span class="w"> </span>/var/www/html/taller1
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>sudo<span class="w"> </span>chmod<span class="w"> </span><span class="m">755</span><span class="w"> </span>/var/www/html/taller1
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>sudo<span class="w"> </span>chmod<span class="w"> </span><span class="m">644</span><span class="w"> </span>/var/www/html/taller1/index.html
 </code></pre></div></li>
 <li>Abre el navegador web y accede a:
-   <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>http://localhost/taller1/
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>http://localhost/taller1/
 </code></pre></div>
    Comprueba que visualizas el texto maquetado.</li>
 </ol>
@@ -3068,7 +3103,7 @@
 <p><strong>Simulación y Diagnóstico de Error 403 Forbidden:</strong></p>
 <ul>
 <li>Retira deliberadamente los permisos de lectura a la página de la zona técnica ejecutando:
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>sudo<span class="w"> </span>chmod<span class="w"> </span><span class="m">000</span><span class="w"> </span>/var/www/html/area_tecnica/index.html
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>sudo<span class="w"> </span>chmod<span class="w"> </span><span class="m">000</span><span class="w"> </span>/var/www/html/area_tecnica/index.html
 </code></pre></div></li>
 <li>Accede desde el navegador a <code>http://localhost/area_tecnica/index.html</code> y comprueba el error que muestra el servidor web.</li>
 <li>Restaura los permisos correctos (<code>644</code>) y verifica que vuelve a cargar correctamente.</li>
@@ -3078,7 +3113,7 @@
 <p><strong>Comprobación de Acceso por Red Local:</strong></p>
 <ul>
 <li>Averigua la dirección IP de tu tarjeta de red mediante el comando:
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>ip<span class="w"> </span>a
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>ip<span class="w"> </span>a
 </code></pre></div></li>
 <li>Accede desde el navegador web sustituyendo <code>localhost</code> por tu dirección IP real (por ejemplo <code>http://192.168.X.X/ciclo_smx/</code>).</li>
 </ul>

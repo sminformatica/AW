@@ -474,7 +474,7 @@
   <span class="md-ellipsis">
     
   
-    Unidad Didáctica 1: Aplicaciones y servidores web
+    UD1: Aplicaciones y servidores web
   
 
     
@@ -2902,9 +2902,7 @@
 <div class="admonition info">
 <p class="admonition-title">Recurso Audiovisual</p>
 <p>Revisa el siguiente vídeo explicativo sobre el funcionamiento de los puertos de red y sockets en las comunicaciones TCP/IP:</p>
-<ul>
-<li><a href="https://www.youtube.com/watch?v=kYv_8A3E72U">Qué son los puertos de red y cómo funcionan</a></li>
-</ul>
+<p><iframe width="560" height="315" src="https://www.youtube.com/embed/g7iiqatv4Mo?si=27vu2PXkQIQmCuyj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe></p>
 </div>
 <h2 id="23-el-directorio-raiz-de-documentos-documentroot">2.3 El Directorio Raíz de Documentos (DocumentRoot)</h2>
 <p>Cuando un servidor web recibe una petición HTTP solicitando una página (por ejemplo <code>http://localhost/contacto.html</code>), el servidor busca ese archivo en una carpeta específica de su disco duro. A esa carpeta principal se la conoce como <strong>DocumentRoot</strong> (Raíz de Documentos).</p>
@@ -2914,11 +2912,7 @@
 <li>Cuando accedes a <code>http://localhost/</code>, el servidor busca automáticamente dentro de esa carpeta un archivo índice por defecto, habitualmente <code>index.html</code>.</li>
 <li>Si dentro de <code>/var/www/html/</code> creas una subcarpeta llamada <code>proyecto/</code>, su URL correspondiente en el navegador será <code>http://localhost/proyecto/</code>.</li>
 </ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Ruta en el Disco Duro (Linux)            URL en el Navegador
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>/var/www/html/index.html          ───&gt;   http://localhost/
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>/var/www/html/contacto.html       ───&gt;   http://localhost/contacto.html
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>/var/www/html/empresa/index.html  ───&gt;   http://localhost/empresa/
-</code></pre></div>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../img/directoriosyrutas.png" data-title="Directorios y rutas de DocumentRoot" data-desc-position="bottom"><img alt="Directorios y rutas de DocumentRoot" src="../../img/directoriosyrutas.png" title="Directorios y rutas de DocumentRoot"></a></p>
 <h2 id="24-permisos-de-archivos-posix-para-la-web">2.4 Permisos de Archivos POSIX para la Web</h2>
 <p>El servidor web no tiene privilegios de superusuario (<code>root</code>). Para poder leer los archivos y mostrarlos en el navegador, los ficheros deben tener los permisos correctos en Linux:</p>
 <ul>
