@@ -20,7 +20,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -28,7 +28,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -2989,6 +2989,7 @@
 </li>
 <li><strong>Criterios de Evaluación (CE) Vinculados:</strong><ul>
 <li><strong>CE 1.a:</strong> Se han clasificado los componentes de una aplicación web y las tecnologías asociadas en clientes y servidores.</li>
+<li><strong>CE 1.b:</strong> Se han analizado las funciones del servidor web y del cliente web en el intercambio de información.</li>
 </ul>
 </li>
 </ul>
@@ -2998,34 +2999,42 @@
 <h3 id="paso-1-abrir-las-herramientas-de-desarrollador">Paso 1: Abrir las Herramientas de Desarrollador</h3>
 <ol>
 <li>Abre tu navegador web (<strong>Mozilla Firefox</strong> o <strong>Google Chrome/Chromium</strong>) en LliureX/Ubuntu.</li>
-<li>Presiona la tecla <code>F12</code> en tu teclado.</li>
-<li>Observa que en la parte inferior o lateral de la pantalla se abre un panel técnico.</li>
+<li>Presiona la tecla <code>F12</code> en tu teclado (o haz clic derecho y selecciona <strong>Inspeccionar</strong>).</li>
+<li>Observa que en la parte inferior o lateral de la pantalla se abre un panel técnico con múltiples pestañas.</li>
 <li>Haz clic en la pestaña llamada <strong>Red</strong> (o <em>Network</em> en inglés).</li>
 </ol>
+<div class="admonition tip">
+<p class="admonition-title">Consejo Pro</p>
+<p>Mantén la pestaña <strong>Red</strong> abierta antes de recargar o escribir una URL para asegurarte de capturar todas las peticiones iniciales (como recursos estáticos, imágenes, hojas de estilo o scripts).</p>
+</div>
 <h3 id="paso-2-realizar-una-peticion-web">Paso 2: Realizar una Petición Web</h3>
 <ol>
 <li>Con la pestaña <strong>Red</strong> abierta, escribe en la barra de direcciones del navegador:
    <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>http://info.cern.ch
 </code></pre></div>
-   <em>(Este es el primer sitio web de la historia, una página puramente estática en HTML).</em></li>
+   <em>(Este es el primer sitio web de la historia, una página puramente estática en HTML que no utiliza cifrado HTTPS).</em></li>
 <li>Pulsa <code>Enter</code>.</li>
 </ol>
 <h3 id="paso-3-analizar-la-peticion-y-respuesta-http">Paso 3: Analizar la Petición y Respuesta HTTP</h3>
 <ol>
 <li>Verás que en la tabla de la pestaña <strong>Red</strong> aparece una fila correspondiente a la petición realizada.</li>
-<li>Haz clic sobre esa primera fila para ver los detalles:<ul>
-<li><strong>Método de la petición:</strong> <code>GET</code> (el cliente solicita un recurso).</li>
-<li><strong>Código de estado:</strong> <code>200 OK</code> (el servidor respondió con éxito).</li>
+<li>Haz clic sobre esa primera fila para desplegar el panel de detalles:<ul>
+<li><strong>Método de la petición:</strong> <code>GET</code> (indica que el cliente solicita un recurso al servidor).</li>
+<li><strong>Código de estado:</strong> <code>200 OK</code> (indica que el servidor procesó la petición con éxito).</li>
 <li><strong>Dirección remota / IP:</strong> La dirección IP del servidor del CERN que te ha atendido.</li>
 </ul>
 </li>
-<li>Haz clic en la subpestaña <strong>Encabezados</strong> (o <em>Headers</em>) para ver la información que el cliente envió y lo que el servidor devolvió (software que usa, fecha, tamaño del archivo).</li>
+<li>Haz clic en la subpestaña <strong>Encabezados</strong> (o <em>Headers</em>) para examinar metadatos críticos:<ul>
+<li><strong>Cabeceras de respuesta:</strong> Software del servidor web (<code>Server</code>), fecha y hora (<code>Date</code>), y tipo de contenido (<code>Content-Type</code>).</li>
+<li><strong>Cabeceras de petición:</strong> Información enviada por el navegador (como el agente de usuario <code>User-Agent</code> o los formatos aceptados <code>Accept</code>).</li>
+</ul>
+</li>
 </ol>
 <h3 id="paso-4-inspeccion-de-peticion-por-consola-con-curl">Paso 4: Inspección de Petición por Consola con cURL</h3>
-<p>En sistemas Linux, no siempre dispones de entorno gráfico. Puedes realizar la misma petición HTTP directamente desde la terminal del sistema.</p>
+<p>En entornos de servidores Linux o sistemas headless, no siempre dispones de interfaz gráfica. Puedes realizar la misma petición HTTP directamente desde la terminal del sistema mediante utilidades de línea de comandos.</p>
 <ol>
 <li>Abre tu terminal en LliureX/Ubuntu (<code>Ctrl + Alt + T</code>).</li>
-<li>Ejecuta el comando <code>curl</code> con el parámetro <code>-I</code> (para solicitar únicamente las cabeceras HTTP):
+<li>Ejecuta el comando <code>curl</code> con el parámetro <code>-I</code> para solicitar exclusivamente las cabeceras HTTP:
    <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>curl<span class="w"> </span>-I<span class="w"> </span>http://info.cern.ch
 </code></pre></div></li>
 <li>Comprueba que el terminal te devuelve la respuesta directa enviada por el servidor:
@@ -3035,53 +3044,57 @@
 <a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>Content-Type: text/html
 </code></pre></div></li>
 </ol>
+<div class="admonition note">
+<p class="admonition-title">Funcionamiento de cURL</p>
+<p>El comando <code>curl</code> actúa como un cliente HTTP textual, permitiendo depurar protocolos web sin necesidad de renderizar el contenido HTML en un navegador.</p>
+</div>
 <h2 id="parte-2-practica-autonoma">Parte 2: Práctica Autónoma</h2>
-<p>Realiza las siguientes actividades de forma individual en tu puesto de trabajo. Anota y captura todas las evidencias para completar la entrega.</p>
+<p>Realiza las siguientes actividades de forma individual en tu puesto de trabajo. Anota y captura todas las evidencias requeridas para completar la entrega técnica.</p>
 <h3 id="actividad-1-analisis-de-codigos-de-estado-y-redirecciones">Actividad 1: Análisis de Códigos de Estado y Redirecciones</h3>
 <ol>
 <li>Abre la herramienta de inspección (<code>F12</code>) en tu navegador web y sitúate en la pestaña <strong>Red</strong>.</li>
 <li>Escribe en la barra de direcciones:
-   http://iesjoanfuster.edu.gva.es
-   <em>(Fíjate que estás escribiendo <code>http://</code> en lugar de <code>https://</code>).</em></li>
-<li>Observa qué ocurre en la pestaña de red:<ul>
-<li>Localiza la primera petición realizada. ¿Qué código de estado numérico devuelve el servidor?</li>
-<li>¿Hacia qué nueva URL te redirige el servidor de forma automática para proteger la conexión?</li>
+   <code>http://iesjoanfuster.edu.gva.es</code>
+   <em>(Fíjate que estás escribiendo explícitamente <code>http://</code> en lugar de <code>https://</code>).</em></li>
+<li>Observa detalladamente qué ocurre en la pestaña de red:<ul>
+<li>Localiza la primera petición realizada. ¿Qué código de estado numérico devuelve inicialmente el servidor (ej. <code>301</code>, <code>302</code> o <code>307</code>)?</li>
+<li>¿Hacia qué nueva URL con esquema seguro (<code>https://</code>) te redirige el servidor de forma automática para proteger la conexión?</li>
 </ul>
 </li>
-<li>Escribe ahora una dirección deliberadamente errónea dentro de la misma web, por ejemplo:
-      https://www.gnu.org/pagina_inexistente_prueba_smx<ul>
-<li>Anota qué código de estado numérico devuelve el servidor al no encontrar el recurso.</li>
+<li>Escribe ahora una dirección deliberadamente errónea dentro de un dominio base válido, por ejemplo:
+   <code>https://www.gnu.org/pagina_inexistente_prueba_smx</code><ul>
+<li>Anota qué código de estado HTTP (<code>4xx</code>) devuelve el servidor web al no encontrar el recurso solicitado.</li>
 </ul>
 </li>
 </ol>
 <h3 id="actividad-2-consulta-de-cabeceras-desde-la-terminal-de-linux">Actividad 2: Consulta de Cabeceras desde la Terminal de Linux</h3>
 <p>Abre la terminal de tu equipo y realiza las siguientes peticiones utilizando el comando <code>curl -I</code>:</p>
 <ol>
-<li>Realiza una petición a la web del instituto:
+<li>Realiza una petición HEAD/GET a la web del instituto:
    <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>curl<span class="w"> </span>-I<span class="w"> </span>https://iesjoanfuster.edu.gva.es
 </code></pre></div></li>
-<li>Realiza una petición a la web del proyecto Debian:
+<li>Realiza una petición HEAD/GET a la web del proyecto Debian:
    <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>curl<span class="w"> </span>-I<span class="w"> </span>https://www.debian.org
 </code></pre></div></li>
-<li>Para cada una de las dos consultas, identifica y anota en tu informe:<ul>
+<li>Para cada una de las dos consultas, identifica y documenta en tu informe:<ul>
 <li>El código de estado devuelto.</li>
-<li>El software del servidor web que te atiende (campo <code>Server:</code> de la cabecera, si está visible).</li>
-<li>El tipo de contenido devuelto (campo <code>Content-Type:</code>).</li>
+<li>El software del servidor web que te atiende (analizando el campo <code>Server:</code> de la cabecera HTTP).</li>
+<li>El tipo MIME devuelto (campo <code>Content-Type:</code>).</li>
 </ul>
 </li>
 </ol>
 <div class="admonition danger">
-<p class="admonition-title">Atención a la Sintaxis</p>
-<p>El parámetro <code>-I</code> en el comando <code>curl</code> debe ser una <strong>I mayúscula</strong> (de Información de cabecera). Si usas una <code>i</code> minúscula, el comando se comportará de forma distinta descargando todo el contenido de la web.</p>
+<p class="admonition-title">Atención a la Sintaxis y Mayúsculas</p>
+<p>El parámetro <code>-I</code> en el comando <code>curl</code> debe ser una <strong>I mayúscula</strong> (--head). Si usas una <code>i</code> minúscula por error, el comando se comportará de forma diferente descargando e imprimiendo el código fuente completo de la página web en la terminal.</p>
 </div>
 <div class="admonition info">
-<p class="admonition-title">Entregables</p>
-<p>Crea un documento en formato PDF con el nombre <code>UD01_S1_Apellido_Nombre.pdf</code> que contenga:</p>
+<p class="admonition-title">Entregables y Formato de Entrega</p>
+<p>Crea un documento profesional en formato PDF con la nomenclatura exacta <code>UD01_S1_Apellido_Nombre.pdf</code> que contenga estructuradamente:</p>
 <ol>
 <li><strong>Captura 1:</strong> Pestaña <strong>Red</strong> del navegador abierta con <code>F12</code> mostrando la petición exitosa (<code>200 OK</code>) a <code>http://info.cern.ch</code>.</li>
-<li><strong>Captura 2:</strong> Pestaña <strong>Red</strong> del navegador mostrando la respuesta de error <code>404</code> en la página inexistente de prueba.</li>
-<li><strong>Captura 3:</strong> Terminal de LliureX con las respuestas de los comandos <code>curl -I</code> ejecutados en la Actividad 2.</li>
-<li><strong>Respuestas redactadas:</strong> Breve explicación con tus palabras de qué diferencia hay entre un cliente y un servidor web basándote en las pruebas que has realizado.</li>
+<li><strong>Captura 2:</strong> Pestaña <strong>Red</strong> del navegador mostrando la respuesta de error de cliente (<code>404 Not Found</code>) en la página inexistente de prueba.</li>
+<li><strong>Captura 3:</strong> Terminal de LliureX mostrando la salida limpia de los comandos <code>curl -I</code> ejecutados en la Actividad 2.</li>
+<li><strong>Respuestas redactadas:</strong> Breve explicación técnica redactada con tus propias palabras sobre la diferencia fundamental entre el rol de un cliente web y un servidor web, fundamentada en los resultados obtenidos durante las pruebas de inspección.</li>
 </ol>
 </div>
 
@@ -3142,7 +3155,7 @@
       <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "content.code.copy", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
     
   
